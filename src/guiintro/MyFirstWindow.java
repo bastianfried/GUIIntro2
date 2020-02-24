@@ -6,10 +6,13 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.widgets.Text;
+import org.eclipse.swt.widgets.Label;
 
 public class MyFirstWindow {
 
 	protected Shell shell;
+	private Text text;
 
 	/**
 	 * Launch the application.
@@ -52,11 +55,23 @@ public class MyFirstWindow {
 		btnMyknopf.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				System.out.println("MyKnopf wurde gedrückt!!");
+			//	System.out.println("MyKnopf wurde gedrückt!!");
+				System.out.println(getText().getText());
+			
 			}
 		});
 		btnMyknopf.setBounds(128, 142, 75, 25);
 		btnMyknopf.setText("MyKnopf");
+		
+		Label lblVorname = new Label(shell, SWT.NONE);
+		lblVorname.setBounds(154, 74, 55, 15);
+		lblVorname.setText("Vorname");
+		
+		text = new Text(shell, SWT.BORDER);
+		text.setBounds(211, 71, 76, 21);
 
+	}
+	public Text getText() {
+		return text;
 	}
 }
