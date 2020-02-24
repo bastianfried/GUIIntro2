@@ -13,6 +13,7 @@ public class MyFirstWindow {
 
 	/**
 	 * Launch the application.
+	 * 
 	 * @param args
 	 */
 	public static void main(String[] args) {
@@ -46,7 +47,7 @@ public class MyFirstWindow {
 		shell = new Shell();
 		shell.setSize(450, 300);
 		shell.setText("SWT Application");
-		
+
 		Button btnMyknopf = new Button(shell, SWT.NONE);
 		btnMyknopf.addSelectionListener(new SelectionAdapter() {
 			@Override
