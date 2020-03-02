@@ -14,8 +14,11 @@ public class MyFirstWindow {
 	protected Shell shell;
 	private Text Vorname;
 	private Text Eingabe;
-	private Text Ergebniss;
-	private Button btnEnter;
+	private Button Divise;
+	private Button Multiply;
+	private Button Subtract;
+	private Button Add;
+	private Text Eingabe2;
 
 	/**
 	 * Launch the application.
@@ -73,37 +76,52 @@ public class MyFirstWindow {
 		Vorname = new Text(shell, SWT.BORDER);
 		Vorname.setBounds(165, 12, 76, 21);
 
+		Label lblEingabe = new Label(shell, SWT.NONE);
+		lblEingabe.setBounds(68, 88, 55, 15);
+		lblEingabe.setText("Eingabe");
+
 		Eingabe = new Text(shell, SWT.BORDER);
 		Eingabe.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-
-			}
-		});
-		Eingabe.setBounds(206, 129, 76, 21);
-
-		Ergebniss = new Text(shell, SWT.BORDER);
-		Ergebniss.setBounds(206, 176, 76, 21);
-
-		Label lblEingabe = new Label(shell, SWT.NONE);
-		lblEingabe.setBounds(128, 135, 55, 15);
-		lblEingabe.setText("Eingabe");
-
-		Label lblErgebniss = new Label(shell, SWT.NONE);
-		lblErgebniss.setBounds(128, 182, 55, 15);
-		lblErgebniss.setText("Ergebniss");
-
-		btnEnter = new Button(shell, SWT.NONE);
-		btnEnter.addSelectionListener(new SelectionAdapter() {
-			@Override
-			public void widgetSelected(SelectionEvent e) {
 				String text = getEingabe().getText();
 				Integer zahl = Integer.parseInt(text);
-				System.out.println(zahl + 5);
+
 			}
 		});
-		btnEnter.setBounds(300, 127, 75, 25);
-		btnEnter.setText("Enter");
+		Eingabe.setBounds(129, 85, 76, 21);
+
+		Eingabe2 = new Text(shell, SWT.BORDER);
+		Eingabe2.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				String text2 = getEingabe2().getText();
+				Integer zahl2 = Integer.parseInt(text2);
+
+			}
+		});
+		Eingabe2.setBounds(297, 85, 76, 21);
+
+		Add = new Button(shell, SWT.NONE);
+		Add.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+			}
+		});
+		Add.setBounds(211, 54, 75, 25);
+		Add.setText("+");
+
+		Subtract = new Button(shell, SWT.NONE);
+		Subtract.setBounds(211, 85, 75, 25);
+		Subtract.setText("-");
+
+		Multiply = new Button(shell, SWT.NONE);
+		Multiply.setBounds(211, 116, 75, 25);
+		Multiply.setText("*");
+
+		Divise = new Button(shell, SWT.NONE);
+		Divise.setBounds(211, 147, 75, 25);
+		Divise.setText("/");
 
 	}
 
@@ -115,11 +133,23 @@ public class MyFirstWindow {
 		return Eingabe;
 	}
 
-	public Text getErgebniss() {
-		return Ergebniss;
+	public Button getDivise() {
+		return Divise;
 	}
 
-	public Button getBtnEnter() {
-		return btnEnter;
+	public Button getMultiply() {
+		return Multiply;
+	}
+
+	public Button getSubtract() {
+		return Subtract;
+	}
+
+	public Button getAdd() {
+		return Add;
+	}
+
+	public Text getEingabe2() {
+		return Eingabe2;
 	}
 }
