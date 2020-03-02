@@ -108,8 +108,7 @@ public class MyFirstWindow {
 				ergebnis = ergebnis + zahl;
 				getEingabe2().setText(Integer.toString(ergebnis));
 				getEingabe().setText("");
-			    System.out.println(ergebnis);
-			    getEingabe().setText("");
+				getEingabe().setText("");
 
 			}
 		});
@@ -125,7 +124,6 @@ public class MyFirstWindow {
 				ergebnis = ergebnis - zahl;
 				getEingabe2().setText(Integer.toString(ergebnis));
 				getEingabe().setText("");
-				System.out.println(ergebnis);
 				getEingabe().setText("");
 			}
 		});
@@ -141,7 +139,6 @@ public class MyFirstWindow {
 				ergebnis = ergebnis * zahl;
 				getEingabe2().setText(Integer.toString(ergebnis));
 				getEingabe().setText("");
-				System.out.println(ergebnis);
 				getEingabe().setText("");
 			}
 		});
@@ -157,24 +154,12 @@ public class MyFirstWindow {
 				ergebnis = ergebnis / zahl;
 				getEingabe2().setText(Integer.toString(ergebnis));
 				getEingabe().setText("");
-				System.out.println(ergebnis);
 				getEingabe().setText("");
 			}
 		});
 		Divise.setBounds(225, 147, 75, 25);
 		Divise.setText("/");
-		
-		btnClear = new Button(shell, SWT.NONE);
-		btnClear.addSelectionListener(new SelectionAdapter() {
-			@Override
-			public void widgetSelected(SelectionEvent e) {
-				getEingabe().setText("");
-				
-			}
-		});
-		btnClear.setBounds(143, 160, 75, 25);
-		btnClear.setText("Clear");
-		
+
 		lblErgebnis = new Label(shell, SWT.NONE);
 		lblErgebnis.setBounds(81, 118, 55, 15);
 		lblErgebnis.setText("Ergebnis");
@@ -208,7 +193,5 @@ public class MyFirstWindow {
 	public Text getEingabe2() {
 		return Ergebnis;
 	}
-	public Button getBtnClear() {
-		return btnClear;
-	}
+
 }
