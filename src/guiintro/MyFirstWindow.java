@@ -12,7 +12,10 @@ import org.eclipse.swt.widgets.Label;
 public class MyFirstWindow {
 
 	protected Shell shell;
-	private Text text;
+	private Text Vorname;
+	private Text Eingabe;
+	private Text Ergebniss;
+	private Button btnEnter;
 
 	/**
 	 * Launch the application.
@@ -55,23 +58,68 @@ public class MyFirstWindow {
 		btnMyknopf.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-			//	System.out.println("MyKnopf wurde gedrückt!!");
+				// System.out.println("MyKnopf wurde gedrückt!!");
 				System.out.println(getText().getText());
-			
+
 			}
 		});
-		btnMyknopf.setBounds(128, 142, 75, 25);
+		btnMyknopf.setBounds(10, 10, 75, 25);
 		btnMyknopf.setText("MyKnopf");
-		
+
 		Label lblVorname = new Label(shell, SWT.NONE);
-		lblVorname.setBounds(154, 74, 55, 15);
+		lblVorname.setBounds(104, 15, 55, 15);
 		lblVorname.setText("Vorname");
-		
-		text = new Text(shell, SWT.BORDER);
-		text.setBounds(211, 71, 76, 21);
+
+		Vorname = new Text(shell, SWT.BORDER);
+		Vorname.setBounds(165, 12, 76, 21);
+
+		Eingabe = new Text(shell, SWT.BORDER);
+		Eingabe.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+
+			}
+		});
+		Eingabe.setBounds(206, 129, 76, 21);
+
+		Ergebniss = new Text(shell, SWT.BORDER);
+		Ergebniss.setBounds(206, 176, 76, 21);
+
+		Label lblEingabe = new Label(shell, SWT.NONE);
+		lblEingabe.setBounds(128, 135, 55, 15);
+		lblEingabe.setText("Eingabe");
+
+		Label lblErgebniss = new Label(shell, SWT.NONE);
+		lblErgebniss.setBounds(128, 182, 55, 15);
+		lblErgebniss.setText("Ergebniss");
+
+		btnEnter = new Button(shell, SWT.NONE);
+		btnEnter.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				String text = getEingabe().getText();
+				Integer zahl = Integer.parseInt(text);
+				System.out.println(zahl + 5);
+			}
+		});
+		btnEnter.setBounds(300, 127, 75, 25);
+		btnEnter.setText("Enter");
 
 	}
+
 	public Text getText() {
-		return text;
+		return Vorname;
+	}
+
+	public Text getEingabe() {
+		return Eingabe;
+	}
+
+	public Text getErgebniss() {
+		return Ergebniss;
+	}
+
+	public Button getBtnEnter() {
+		return btnEnter;
 	}
 }
