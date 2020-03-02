@@ -122,7 +122,7 @@ public class MyFirstWindow {
 			public void widgetSelected(SelectionEvent e) {
 				int ergebnis = Integer.parseInt(getEingabe2().getText());
 				int zahl = Integer.parseInt(getEingabe().getText());
-				ergebnis = ergebnis + zahl;
+				ergebnis = ergebnis - zahl;
 				getEingabe2().setText(Integer.toString(ergebnis));
 				getEingabe().setText("");
 				System.out.println(ergebnis);
@@ -138,7 +138,7 @@ public class MyFirstWindow {
 			public void widgetSelected(SelectionEvent e) {
 				int ergebnis = Integer.parseInt(getEingabe2().getText());
 				int zahl = Integer.parseInt(getEingabe().getText());
-				ergebnis = ergebnis + zahl;
+				ergebnis = ergebnis * zahl;
 				getEingabe2().setText(Integer.toString(ergebnis));
 				getEingabe().setText("");
 				System.out.println(ergebnis);
@@ -154,7 +154,7 @@ public class MyFirstWindow {
 			public void widgetSelected(SelectionEvent e) {
 				int ergebnis = Integer.parseInt(getEingabe2().getText());
 				int zahl = Integer.parseInt(getEingabe().getText());
-				ergebnis = ergebnis + zahl;
+				ergebnis = ergebnis / zahl;
 				getEingabe2().setText(Integer.toString(ergebnis));
 				getEingabe().setText("");
 				System.out.println(ergebnis);
