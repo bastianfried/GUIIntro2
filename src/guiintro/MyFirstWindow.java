@@ -18,7 +18,9 @@ public class MyFirstWindow {
 	private Button Multiply;
 	private Button Subtract;
 	private Button Add;
-	private Text Eingabe2;
+	private Text Ergebnis;
+	private Button btnClear;
+	private Label lblErgebnis;
 
 	/**
 	 * Launch the application.
@@ -77,51 +79,105 @@ public class MyFirstWindow {
 		Vorname.setBounds(165, 12, 76, 21);
 
 		Label lblEingabe = new Label(shell, SWT.NONE);
-		lblEingabe.setBounds(68, 88, 55, 15);
+		lblEingabe.setBounds(81, 88, 55, 15);
 		lblEingabe.setText("Eingabe");
 
 		Eingabe = new Text(shell, SWT.BORDER);
 		Eingabe.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				String text = getEingabe().getText();
-				Integer zahl = Integer.parseInt(text);
-
 			}
 		});
-		Eingabe.setBounds(129, 85, 76, 21);
+		Eingabe.setBounds(142, 85, 76, 21);
 
-		Eingabe2 = new Text(shell, SWT.BORDER);
-		Eingabe2.addSelectionListener(new SelectionAdapter() {
+		Ergebnis = new Text(shell, SWT.BORDER);
+		Ergebnis.setText("0");
+		Ergebnis.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				String text2 = getEingabe2().getText();
-				Integer zahl2 = Integer.parseInt(text2);
-
 			}
 		});
-		Eingabe2.setBounds(297, 85, 76, 21);
+		Ergebnis.setBounds(142, 112, 76, 21);
 
 		Add = new Button(shell, SWT.NONE);
 		Add.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
+				int ergebnis = Integer.parseInt(getEingabe2().getText());
+				int zahl = Integer.parseInt(getEingabe().getText());
+				ergebnis = ergebnis + zahl;
+				getEingabe2().setText(Integer.toString(ergebnis));
+				getEingabe().setText("");
+			    System.out.println(ergebnis);
+			    getEingabe().setText("");
+
 			}
 		});
-		Add.setBounds(211, 54, 75, 25);
+		Add.setBounds(225, 53, 75, 25);
 		Add.setText("+");
 
 		Subtract = new Button(shell, SWT.NONE);
-		Subtract.setBounds(211, 85, 75, 25);
+		Subtract.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				int ergebnis = Integer.parseInt(getEingabe2().getText());
+				int zahl = Integer.parseInt(getEingabe().getText());
+				ergebnis = ergebnis + zahl;
+				getEingabe2().setText(Integer.toString(ergebnis));
+				getEingabe().setText("");
+				System.out.println(ergebnis);
+				getEingabe().setText("");
+			}
+		});
+		Subtract.setBounds(224, 83, 75, 25);
 		Subtract.setText("-");
 
 		Multiply = new Button(shell, SWT.NONE);
-		Multiply.setBounds(211, 116, 75, 25);
+		Multiply.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				int ergebnis = Integer.parseInt(getEingabe2().getText());
+				int zahl = Integer.parseInt(getEingabe().getText());
+				ergebnis = ergebnis + zahl;
+				getEingabe2().setText(Integer.toString(ergebnis));
+				getEingabe().setText("");
+				System.out.println(ergebnis);
+				getEingabe().setText("");
+			}
+		});
+		Multiply.setBounds(225, 114, 75, 25);
 		Multiply.setText("*");
 
 		Divise = new Button(shell, SWT.NONE);
-		Divise.setBounds(211, 147, 75, 25);
+		Divise.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				int ergebnis = Integer.parseInt(getEingabe2().getText());
+				int zahl = Integer.parseInt(getEingabe().getText());
+				ergebnis = ergebnis + zahl;
+				getEingabe2().setText(Integer.toString(ergebnis));
+				getEingabe().setText("");
+				System.out.println(ergebnis);
+				getEingabe().setText("");
+			}
+		});
+		Divise.setBounds(225, 147, 75, 25);
 		Divise.setText("/");
+		
+		btnClear = new Button(shell, SWT.NONE);
+		btnClear.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				getEingabe().setText("");
+				
+			}
+		});
+		btnClear.setBounds(143, 160, 75, 25);
+		btnClear.setText("Clear");
+		
+		lblErgebnis = new Label(shell, SWT.NONE);
+		lblErgebnis.setBounds(81, 118, 55, 15);
+		lblErgebnis.setText("Ergebnis");
 
 	}
 
@@ -150,6 +206,9 @@ public class MyFirstWindow {
 	}
 
 	public Text getEingabe2() {
-		return Eingabe2;
+		return Ergebnis;
+	}
+	public Button getBtnClear() {
+		return btnClear;
 	}
 }
