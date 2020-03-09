@@ -21,6 +21,17 @@ public class MyFirstWindow {
 	private Text Ergebnis;
 	private Button btnClear;
 	private Label lblErgebnis;
+	private Button btn7;
+	private Button btn8;
+	private Button btn9;
+	private Button btn4;
+	private Button btn1;
+	private Button btn5;
+	private Button btn6;
+	private Button btn3;
+	private Button btn2;
+	private Button btn0;
+	private Text text;
 
 	/**
 	 * Launch the application.
@@ -56,7 +67,7 @@ public class MyFirstWindow {
 	 */
 	protected void createContents() {
 		shell = new Shell();
-		shell.setSize(450, 300);
+		shell.setSize(876, 531);
 		shell.setText("SWT Application");
 
 		Button btnMyknopf = new Button(shell, SWT.NONE);
@@ -79,16 +90,17 @@ public class MyFirstWindow {
 		Vorname.setBounds(165, 12, 76, 21);
 
 		Label lblEingabe = new Label(shell, SWT.NONE);
-		lblEingabe.setBounds(81, 88, 55, 15);
+		lblEingabe.setBounds(306, 74, 55, 15);
 		lblEingabe.setText("Eingabe");
 
 		Eingabe = new Text(shell, SWT.BORDER);
+		Eingabe.setText("0");
 		Eingabe.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 			}
 		});
-		Eingabe.setBounds(142, 85, 76, 21);
+		Eingabe.setBounds(387, 60, 237, 40);
 
 		Ergebnis = new Text(shell, SWT.BORDER);
 		Ergebnis.setText("0");
@@ -97,7 +109,7 @@ public class MyFirstWindow {
 			public void widgetSelected(SelectionEvent e) {
 			}
 		});
-		Ergebnis.setBounds(142, 112, 76, 21);
+		Ergebnis.setBounds(81, 38, 76, 21);
 
 		Add = new Button(shell, SWT.NONE);
 		Add.addSelectionListener(new SelectionAdapter() {
@@ -112,7 +124,7 @@ public class MyFirstWindow {
 
 			}
 		});
-		Add.setBounds(225, 53, 75, 25);
+		Add.setBounds(631, 106, 75, 25);
 		Add.setText("+");
 
 		Subtract = new Button(shell, SWT.NONE);
@@ -127,7 +139,7 @@ public class MyFirstWindow {
 				getEingabe().setText("");
 			}
 		});
-		Subtract.setBounds(224, 83, 75, 25);
+		Subtract.setBounds(631, 137, 75, 25);
 		Subtract.setText("-");
 
 		Multiply = new Button(shell, SWT.NONE);
@@ -142,7 +154,7 @@ public class MyFirstWindow {
 				getEingabe().setText("");
 			}
 		});
-		Multiply.setBounds(225, 114, 75, 25);
+		Multiply.setBounds(631, 168, 75, 25);
 		Multiply.setText("*");
 
 		Divise = new Button(shell, SWT.NONE);
@@ -157,12 +169,122 @@ public class MyFirstWindow {
 				getEingabe().setText("");
 			}
 		});
-		Divise.setBounds(225, 147, 75, 25);
+		Divise.setBounds(631, 199, 75, 25);
 		Divise.setText("/");
 
 		lblErgebnis = new Label(shell, SWT.NONE);
-		lblErgebnis.setBounds(81, 118, 55, 15);
+		lblErgebnis.setBounds(20, 41, 55, 15);
 		lblErgebnis.setText("Ergebnis");
+		
+		btn9 = new Button(shell, SWT.NONE);
+		btn9.addSelectionListener(new SelectionAdapter() {
+			
+			public void widgetSelected(SelectionEvent e) {
+			int temp = Integer.parseInt(getEingabe().getText());
+			getEingabe().setText(Integer.toString(temp *10 +9));
+			
+			
+			}
+			});
+		btn9.setBounds(550, 106, 75, 25);
+		btn9.setText("9");
+		
+		btn8 = new Button(shell, SWT.NONE);
+		btn8.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				int temp = Integer.parseInt(getEingabe().getText());
+				getEingabe().setText(Integer.toString(temp *10 +8));
+			}
+		});
+		btn8.setBounds(469, 106, 75, 25);
+		btn8.setText("8");
+		
+		btn7 = new Button(shell, SWT.NONE);
+		btn7.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				int temp = Integer.parseInt(getEingabe().getText());
+				getEingabe().setText(Integer.toString(temp *10 +7));
+			}
+		});
+		btn7.setBounds(388, 106, 75, 25);
+		btn7.setText("7");
+		
+		btn6 = new Button(shell, SWT.NONE);
+		btn6.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				int temp = Integer.parseInt(getEingabe().getText());
+				getEingabe().setText(Integer.toString(temp *10 +6));}
+		});
+		btn6.setBounds(550, 137, 75, 25);
+		btn6.setText("6");
+		
+		btn5 = new Button(shell, SWT.NONE);
+		btn5.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				int temp = Integer.parseInt(getEingabe().getText());
+				getEingabe().setText(Integer.toString(temp *10 +5));
+			}
+		});
+		btn5.setBounds(469, 137, 75, 25);
+		btn5.setText("5");
+		
+		btn4 = new Button(shell, SWT.NONE);
+		btn4.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				int temp = Integer.parseInt(getEingabe().getText());
+				getEingabe().setText(Integer.toString(temp *10 +4));}
+		});
+		btn4.setBounds(388, 137, 75, 25);
+		btn4.setText("4");
+		
+		btn3 = new Button(shell, SWT.NONE);
+		btn3.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				int temp = Integer.parseInt(getEingabe().getText());
+				getEingabe().setText(Integer.toString(temp *10 +3));}
+		});
+		btn3.setBounds(550, 168, 75, 25);
+		btn3.setText("3");
+		
+		btn2 = new Button(shell, SWT.NONE);
+		btn2.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				int temp = Integer.parseInt(getEingabe().getText());
+				getEingabe().setText(Integer.toString(temp *10 +2));}
+		});
+		btn2.setBounds(469, 168, 75, 25);
+		btn2.setText("2");
+		
+		btn1 = new Button(shell, SWT.NONE);
+		btn1.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				int temp = Integer.parseInt(getEingabe().getText());
+				getEingabe().setText(Integer.toString(temp *10 +1));}
+		});
+		btn1.setBounds(388, 168, 75, 25);
+		btn1.setText("1");
+		
+		btn0 = new Button(shell, SWT.NONE);
+		btn0.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				int temp = Integer.parseInt(getEingabe().getText());
+				getEingabe().setText(Integer.toString(temp *10 +0));}
+		});
+		btn0.setBounds(388, 204, 75, 25);
+		btn0.setText("0");
+		
+		text = new Text(shell, SWT.BORDER);
+		text.setBounds(151, 387, 76, 21);
+		text.setVisible(false);
 
 	}
 
@@ -193,5 +315,34 @@ public class MyFirstWindow {
 	public Text getEingabe2() {
 		return Ergebnis;
 	}
-
+	public Button getBtn7() {
+		return btn7;
+	}
+	public Button getBtn8() {
+		return btn8;
+	}
+	public Button getBtn9() {
+		return btn9;
+	}
+	public Button getBtn4() {
+		return btn4;
+	}
+	public Button getBtn1() {
+		return btn1;
+	}
+	public Button getBtn5() {
+		return btn5;
+	}
+	public Button getBtn6() {
+		return btn6;
+	}
+	public Button getBtn3() {
+		return btn3;
+	}
+	public Button getBtn2() {
+		return btn2;
+	}
+	public Button getBtn0() {
+		return btn0;
+	}
 }
