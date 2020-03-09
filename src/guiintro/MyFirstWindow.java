@@ -20,7 +20,6 @@ public class MyFirstWindow {
 	private Button Add;
 	private Text Ergebnis;
 	private Button btnClear;
-	private Label lblErgebnis;
 	private Button btn7;
 	private Button btn8;
 	private Button btn9;
@@ -31,7 +30,7 @@ public class MyFirstWindow {
 	private Button btn3;
 	private Button btn2;
 	private Button btn0;
-	private Text text;
+	private Text temp;
 
 	/**
 	 * Launch the application.
@@ -101,6 +100,7 @@ public class MyFirstWindow {
 			}
 		});
 		Eingabe.setBounds(387, 60, 237, 40);
+		Eingabe.setVisible(false);
 
 		Ergebnis = new Text(shell, SWT.BORDER);
 		Ergebnis.setText("0");
@@ -171,10 +171,6 @@ public class MyFirstWindow {
 		});
 		Divise.setBounds(631, 199, 75, 25);
 		Divise.setText("/");
-
-		lblErgebnis = new Label(shell, SWT.NONE);
-		lblErgebnis.setBounds(20, 41, 55, 15);
-		lblErgebnis.setText("Ergebnis");
 		
 		btn9 = new Button(shell, SWT.NONE);
 		btn9.addSelectionListener(new SelectionAdapter() {
@@ -282,9 +278,10 @@ public class MyFirstWindow {
 		btn0.setBounds(388, 204, 75, 25);
 		btn0.setText("0");
 		
-		text = new Text(shell, SWT.BORDER);
-		text.setBounds(151, 387, 76, 21);
-		text.setVisible(false);
+		temp = new Text(shell, SWT.BORDER);
+		temp.setText("0");
+		temp.setBounds(151, 387, 76, 21);
+		temp.setVisible(false);
 
 	}
 
@@ -344,5 +341,8 @@ public class MyFirstWindow {
 	}
 	public Button getBtn0() {
 		return btn0;
+	}
+	public Text getTemp() {
+		return temp;
 	}
 }
