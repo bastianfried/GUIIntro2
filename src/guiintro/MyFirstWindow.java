@@ -31,6 +31,7 @@ public class MyFirstWindow {
 	private Button btn2;
 	private Button btn0;
 	private Text temp;
+	int zahl = 0;
 
 	/**
 	 * Launch the application.
@@ -100,7 +101,7 @@ public class MyFirstWindow {
 			}
 		});
 		Eingabe.setBounds(387, 60, 237, 40);
-		Eingabe.setVisible(false);
+		Eingabe.setVisible(true);
 
 		Ergebnis = new Text(shell, SWT.BORDER);
 		Ergebnis.setText("0");
@@ -109,18 +110,17 @@ public class MyFirstWindow {
 			public void widgetSelected(SelectionEvent e) {
 			}
 		});
-		Ergebnis.setBounds(81, 38, 76, 21);
+		Ergebnis.setBounds(238, 201, 76, 21);
 
 		Add = new Button(shell, SWT.NONE);
 		Add.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
+				zahl = Integer.parseInt(getEingabe().getText());
 				int ergebnis = Integer.parseInt(getEingabe2().getText());
-				int zahl = Integer.parseInt(getEingabe().getText());
 				ergebnis = ergebnis + zahl;
 				getEingabe2().setText(Integer.toString(ergebnis));
-				getEingabe().setText("");
-				getEingabe().setText("");
+				getEingabe().setText("0");
 
 			}
 		});
@@ -135,8 +135,7 @@ public class MyFirstWindow {
 				int zahl = Integer.parseInt(getEingabe().getText());
 				ergebnis = ergebnis - zahl;
 				getEingabe2().setText(Integer.toString(ergebnis));
-				getEingabe().setText("");
-				getEingabe().setText("");
+				getEingabe().setText("0");
 			}
 		});
 		Subtract.setBounds(631, 137, 75, 25);
@@ -150,8 +149,7 @@ public class MyFirstWindow {
 				int zahl = Integer.parseInt(getEingabe().getText());
 				ergebnis = ergebnis * zahl;
 				getEingabe2().setText(Integer.toString(ergebnis));
-				getEingabe().setText("");
-				getEingabe().setText("");
+				getEingabe().setText("0");
 			}
 		});
 		Multiply.setBounds(631, 168, 75, 25);
@@ -165,8 +163,7 @@ public class MyFirstWindow {
 				int zahl = Integer.parseInt(getEingabe().getText());
 				ergebnis = ergebnis / zahl;
 				getEingabe2().setText(Integer.toString(ergebnis));
-				getEingabe().setText("");
-				getEingabe().setText("");
+				getEingabe().setText("0");
 			}
 		});
 		Divise.setBounds(631, 199, 75, 25);
@@ -281,8 +278,8 @@ public class MyFirstWindow {
 		temp = new Text(shell, SWT.BORDER);
 		temp.setText("0");
 		temp.setBounds(151, 387, 76, 21);
-		temp.setVisible(false);
-
+		temp.setVisible(true);
+		
 	}
 
 	public Text getText() {
